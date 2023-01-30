@@ -1,0 +1,175 @@
+name: myapp
+description: A exported flutter project from FUNCTION12
+
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  google_fonts: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/page-1/images/bookmarksimple.png
+    - assets/page-1/images/fill-1-copy-2.png
+    - assets/page-1/images/mdi-twitter.png
+    - assets/page-1/images/fill-1-copy-2-rTF.png
+    - assets/page-1/images/back-icon.png
+    - assets/page-1/images/back-icon-BZF.png
+    - assets/page-1/images/material-symbols-add-photo-alternate-rounded.png
+    - assets/page-1/images/sparkle.png
+    - assets/page-1/images/logo.png
+    - assets/page-1/images/line.png
+    - assets/page-1/images/fill-1-copy.png
+    - assets/page-1/images/fill-1.png
+    - assets/page-1/images/logos-google-icon.png
+    - assets/page-1/images/magnifyingglass.png
+    - assets/page-1/images/fill-1-jSu.png
+    - assets/page-1/images/fill-1-ch3.png
+    - assets/page-1/images/fill-1-copy-2-J8m.png
+    - assets/page-1/images/back-icon-MzD.png
+    - assets/page-1/images/line-mFs.png
+    - assets/page-1/images/logo-hWm.png
+    - assets/page-1/images/logo-ZsT.png
+    - assets/page-1/images/vector.png
+    - assets/page-1/images/fill-1-copy-1DX.png
+    - assets/page-1/images/fill-1-copy-TFs.png
+    - assets/page-1/images/mdi-events.png
+    - assets/page-1/images/image-6.png
+    - assets/page-1/images/logo-S6q.png
+    - assets/page-1/images/back-icon-vfF.png
+    - assets/page-1/images/mappin.png
+    - assets/page-1/images/mdi-events-F7j.png
+    - assets/page-1/images/logos-google-icon-cXF.png
+    - assets/page-1/images/firesimple.png
+    - assets/page-1/images/back-icon-ydF.png
+    - assets/page-1/images/mdi-events-1mX.png
+    - assets/page-1/images/fill-1-copy-Guj.png
+    - assets/page-1/images/group-70.png
+    - assets/page-1/images/logo-qob.png
+    - assets/page-1/images/back-icon-ouF.png
+    - assets/page-1/images/back-icon-nWy.png
+    - assets/page-1/images/back-icon-HA5.png
+    - assets/page-1/images/mdi-twitter-jWM.png
+    - assets/page-1/images/fill-1-copy-KTs.png
+    - assets/page-1/images/fill-1-gbo.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg.png
+    - assets/page-1/images/image-6-x5b.png
+    - assets/page-1/images/line-3L1.png
+    - assets/page-1/images/vector-1zu.png
+    - assets/page-1/images/logo-Nyb.png
+    - assets/page-1/images/logo-x4u.png
+    - assets/page-1/images/mdi-events-88u.png
+    - assets/page-1/images/fill-1-copy-2-DpZ.png
+    - assets/page-1/images/back-icon-dgZ.png
+    - assets/page-1/images/group-3.png
+    - assets/page-1/images/geeme005.png
+    - assets/page-1/images/material-symbols-edit.png
+    - assets/page-1/images/fill-1-6SH.png
+    - assets/page-1/images/material-symbols-add-a-photo.png
+    - assets/page-1/images/geeme058.png
+    - assets/page-1/images/image-6-dyf.png
+    - assets/page-1/images/fill-1-copy-2-eDs.png
+    - assets/page-1/images/group-3-Yt5.png
+    - assets/page-1/images/vector-n45.png
+    - assets/page-1/images/group-59.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-LUm.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-fB3.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bJV.png
+    - assets/page-1/images/image-8-bg.png
+    - assets/page-1/images/page-1.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-pW9.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-A7P.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-hnu.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-6z1.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-Ugu.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-bg-oLq.png
+    - assets/page-1/images/nicole-pollok-byx2bznweuk-unsplash-1-1mw.png
+    - assets/fonts/
+  fonts:
+    - family: Franchise
+      fonts:
+        - asset: assets/fonts/Franchise.ttf
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
