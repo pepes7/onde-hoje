@@ -5,7 +5,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/home.dart';
 import 'package:myapp/utils.dart';
 
-class Preferences extends StatelessWidget {
+import 'package:flutter/material.dart';
+
+const List<String> turnos = <String>['Matutino', 'Vespertino', 'Noturno'];
+
+const List<String> tipos = <String>['Festa', 'Open Bar', 'Restaurante'];
+
+class Preferences extends StatefulWidget {
+  @override
+  _Preferences createState() => _Preferences();
+}
+
+class _Preferences extends State<Preferences> {
+  double _currentSliderValue = 20;
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -213,7 +225,7 @@ class Preferences extends StatelessWidget {
                     top: 391*fem,
                     child: Align(
                       child: SizedBox(
-                        width: 105*fem,
+                        width: 115*fem,
                         height: 31*fem,
                         child: Container(
                           decoration: BoxDecoration (
@@ -231,38 +243,7 @@ class Preferences extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    // backiconReM (0:195)
-                    left: 122.0000038147*fem,
-                    top: 402.0000610352*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 15*fem,
-                        height: 7.66*fem,
-                        child: Image.asset(
-                          'assets/page-1/images/back-icon.png',
-                          width: 15*fem,
-                          height: 7.66*fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // image6U6q (0:197)
-                    left: 156*fem,
-                    top: 400*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 11.91*fem,
-                        height: 13*fem,
-                        child: Image.asset(
-                          'assets/page-1/images/image-6.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
+                  ),//box do tipo
                   Positioned(
                     // tipovDj (0:198)
                     left: 70*fem,
@@ -287,25 +268,9 @@ class Preferences extends StatelessWidget {
                   ),
                   Positioned(
                     // festaMpq (0:199)
-                    left: 173*fem,
-                    top: 400*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 26*fem,
-                        height: 13*fem,
-                        child: Text(
-                          'Festa',
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 10*ffem,
-                            fontWeight: FontWeight.w300,
-                            height: 1.2125*ffem/fem,
-                            fontStyle: FontStyle.italic,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ),
-                    ),
+                    left: 125*fem,
+                    top: 385*fem,
+                    child: DropdownTipo(),
                   ),
                   Positioned(
                     // rectangle38QYD (0:200)
@@ -331,23 +296,7 @@ class Preferences extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    // backicon12D (0:201)
-                    left: 122.0000038147*fem,
-                    top: 444.0000610352*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 15*fem,
-                        height: 7.66*fem,
-                        child: Image.asset(
-                          'assets/page-1/images/back-icon-BZF.png',
-                          width: 15*fem,
-                          height: 7.66*fem,
-                        ),
-                      ),
-                    ),
-                  ),
+                  ),//box do turno
                   Positioned(
                     // turno4WH (0:202)
                     left: 70*fem,
@@ -372,24 +321,10 @@ class Preferences extends StatelessWidget {
                   ),
                   Positioned(
                     // noturnotkD (0:203)
-                    left: 160*fem,
-                    top: 440*fem,
+                    left: 125*fem,
+                    top: 427*fem,
                     child: Align(
-                      child: SizedBox(
-                        width: 39*fem,
-                        height: 13*fem,
-                        child: Text(
-                          'Noturno',
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 10*ffem,
-                            fontWeight: FontWeight.w300,
-                            height: 1.2125*ffem/fem,
-                            fontStyle: FontStyle.italic,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ),
+                      child: DropdownTurno(),
                     ),
                   ),
                   Positioned(
@@ -415,35 +350,22 @@ class Preferences extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // line1AbF (0:205)
-                    left: 76*fem,
-                    top: 508*fem,
+                    left: 90 * fem,
+                    top: 502 * fem,
                     child: Align(
-                      child: SizedBox(
-                        width: 226*fem,
-                        height: 1*fem,
-                        child: Container(
-                          decoration: BoxDecoration (
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // ellipse3SYm (0:206)
-                    left: 116*fem,
-                    top: 502*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 12*fem,
-                        height: 12*fem,
-                        child: Container(
-                          decoration: BoxDecoration (
-                            borderRadius: BorderRadius.circular(6*fem),
-                            color: Color(0xff161a32),
-                          ),
-                        ),
+                      child: Slider(
+                        value: _currentSliderValue,
+                        min: 10,
+                        max: 100,
+                        divisions: 6,
+                        label: _currentSliderValue.round().toString(),
+                        onChanged: (double value) {
+                          setState(() {
+                            _currentSliderValue = value;
+                          });
+                        },
+                        activeColor: Color(0xff161a32),
+                        inactiveColor: Color(0xff959595),
                       ),
                     ),
                   ),
@@ -456,7 +378,7 @@ class Preferences extends StatelessWidget {
                         width: 23*fem,
                         height: 13*fem,
                         child: Text(
-                          '5 km',
+                          '$_currentSliderValue',
                           style: SafeGoogleFont (
                             'Inter',
                             fontSize: 10*ffem,
@@ -515,6 +437,73 @@ class Preferences extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }
+
+class DropdownTurno extends StatefulWidget {
+  const DropdownTurno({super.key});
+
+  @override
+  State<DropdownTurno> createState() => _DropdownTurno();
+}
+
+class _DropdownTurno extends State<DropdownTurno> {
+  String dropdownValue = turnos.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      style: const TextStyle(color: Color(0xff161a32)),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: turnos.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class DropdownTipo extends StatefulWidget {
+  const DropdownTipo({super.key});
+
+  @override
+  State<DropdownTipo> createState() => _DropdownTipo();
+}
+
+class _DropdownTipo extends State<DropdownTipo> {
+  String dropdownValue = tipos.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      style: const TextStyle(color: Color(0xff161a32)),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: tipos.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
