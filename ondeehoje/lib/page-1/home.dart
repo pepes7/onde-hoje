@@ -92,7 +92,13 @@ class Home extends StatelessWidget {
                                       width: 170*fem,
                                       height: 200*fem,
                                       child: TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => Scaffold(body: Register())),
+                                          );
+                                        },
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
@@ -265,7 +271,13 @@ class Home extends StatelessWidget {
                             // mapcardKxR (0:240)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20.84*fem, 0.24*fem),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Scaffold(body: Register())),
+                                );
+                              },
                               style: TextButton.styleFrom (
                                 padding: EdgeInsets.zero,
                               ),
@@ -887,7 +899,13 @@ class Home extends StatelessWidget {
                             // mapcard2p5 (I0:220;0:240)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20.84*fem, 0*fem),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Scaffold(body: Register())),
+                                );
+                              },
                               style: TextButton.styleFrom (
                                 padding: EdgeInsets.zero,
                               ),
