@@ -4,8 +4,57 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/onboarding-1.dart';
 import 'package:myapp/utils.dart';
+import 'dart:async';
 
-class Scene extends StatelessWidget {
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:myapp/page-1/onboarding-1.dart';
+
+class Scene extends StatefulWidget {
+  @override
+  _SceneState createState() => _SceneState();
+}
+
+class _SceneState extends State<Scene> {
+  int _countdown = 2;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  void _startTimer() {
+    const oneSec = const Duration(seconds: 1);
+    _timer = new Timer.periodic(
+      oneSec,
+          (Timer timer) {
+        if (_countdown == 0) {
+          timer.cancel();
+          _navigateToNextScreen();
+        } else {
+          setState(() {
+            _countdown--;
+          });
+        }
+      },
+    );
+  }
+
+  void _navigateToNextScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Scaffold(body: BoardOne())),
+    );
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -233,13 +282,7 @@ class Scene extends StatelessWidget {
                     left: 74*fem,
                     top: 100*fem, //178
                     child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Scaffold(body: BoardOne())),
-                        );
-                      },
+                      onPressed: () {},
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
