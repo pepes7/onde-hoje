@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/criar-evento.dart';
 import 'package:myapp/utils.dart';
 
 class Perfil extends StatelessWidget {
@@ -389,7 +390,7 @@ class Perfil extends StatelessWidget {
                   ),
                   Container(
                     // autogroupg47fQdB (DBsYr6UMK9DtWu32c3g47f)
-                    margin: EdgeInsets.fromLTRB(36*fem, 0*fem, 56*fem, 0*fem),
+                    margin: EdgeInsets.fromLTRB(36*fem, 0*fem, 30*fem, 0*fem),
                     padding: EdgeInsets.fromLTRB(8*fem, 4*fem, 78*fem, 2*fem),
                     width: double.infinity,
                     decoration: BoxDecoration (
@@ -418,16 +419,25 @@ class Perfil extends StatelessWidget {
                             height: 22*fem,
                           ),
                         ),
-                        Text(
-                          // criareventoTUy (0:393)
-                          'Criar evento',
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 20*ffem,
-                            fontWeight: FontWeight.w300,
-                            height: 1.2125*ffem/fem,
-                            fontStyle: FontStyle.italic,
-                            color: Color(0xff161a32),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Scaffold(body: NewEvent())),
+                            );
+                          },
+                          child: Text(
+                            // criareventoTUy (0:393)
+                            'Criar evento',
+                            style: SafeGoogleFont (
+                              'Inter',
+                              fontSize: 20*ffem,
+                              fontWeight: FontWeight.w300,
+                              height: 1.2125*ffem/fem,
+                              fontStyle: FontStyle.italic,
+                              color: Color(0xff161a32),
+                            ),
                           ),
                         ),
                       ],

@@ -16,7 +16,7 @@ class Scene extends StatefulWidget {
 }
 
 class _SceneState extends State<Scene> {
-  int _countdown = 2;
+  int _countdown = 1;
   late Timer _timer;
 
   @override
