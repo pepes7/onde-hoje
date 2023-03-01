@@ -34,7 +34,7 @@ class _NewEvent extends State<NewEvent> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 371;
+    double baseWidth = 375;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return SingleChildScrollView(
@@ -43,7 +43,7 @@ class _NewEvent extends State<NewEvent> {
         width: double.infinity,
         child: Container(
           // criareventoj4q (0:306)
-          padding: EdgeInsets.fromLTRB(22*fem, 14*fem, 15*fem, 277*fem),
+          padding: EdgeInsets.fromLTRB(22*fem, 14*fem, 15*fem, 100*fem),
           width: double.infinity,
           decoration: BoxDecoration (
             color: Color(0xff161a32),
@@ -392,7 +392,7 @@ class _NewEvent extends State<NewEvent> {
                           width: 274*fem,
                           height: 100*fem,
                           child: TextFormField(
-                            maxLines: 10,
+                            maxLines: 4,
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               border: InputBorder.none,

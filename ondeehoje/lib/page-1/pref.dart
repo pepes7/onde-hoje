@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/home.dart';
+import 'package:myapp/page-1/registrar.dart';
 import 'package:myapp/utils.dart';
 
 import 'package:flutter/material.dart';
@@ -407,7 +408,7 @@ class _Preferences extends State<Preferences> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Scaffold(body: Home())),
+                          builder: (context) => Scaffold(body: Register())),
                     );
                   },
                   child: Container(

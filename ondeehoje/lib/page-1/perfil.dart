@@ -8,7 +8,7 @@ import 'package:myapp/utils.dart';
 class Perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 371;
+    double baseWidth = 375;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Container(
@@ -31,21 +31,21 @@ class Perfil extends StatelessWidget {
           children: [
             Container(
               // autogroupsw85Zpy (DBsZRAMayKTu4oK474SW85)
-              padding: EdgeInsets.fromLTRB(37*fem, 15*fem, 13*fem, 7*fem),
+              padding: EdgeInsets.fromLTRB(37*fem, 1*fem, 13*fem, 1*fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // autogroupzmu12iZ (DBsXh3ZjsjyMtZ5tT2zmU1)
-                    margin: EdgeInsets.fromLTRB(85*fem, 0*fem, 0*fem, 26*fem),
+                    margin: EdgeInsets.fromLTRB(85*fem, 0*fem, 0*fem, 1*fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
                           // meuperfilW7w (0:378)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 82*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 25*fem, 82*fem, 0*fem),
                           child: Text(
                             'Meu Perfil',
                             style: SafeGoogleFont (
@@ -74,7 +74,7 @@ class Perfil extends StatelessWidget {
                   ),
                   Container(
                     // autogrouppe6hP5F (DBsXvHgfzhnuECPGEYpE6h)
-                    margin: EdgeInsets.fromLTRB(52*fem, 0*fem, 93*fem, 30*fem),
+                    margin: EdgeInsets.fromLTRB(52*fem, 0*fem, 93*fem, 1*fem),//x,x,x,30
                     padding: EdgeInsets.fromLTRB(146*fem, 154*fem, 8*fem, 2*fem),
                     width: double.infinity,
                     decoration: BoxDecoration (
@@ -102,7 +102,7 @@ class Perfil extends StatelessWidget {
                   ),
                   Container(
                     // autogrouptaazSSq (DBsY1NNYJhKYRP3fYjtaAZ)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 12*fem),
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 1*fem),//x,x,x,12
                     width: 301*fem,
                     height: 45*fem,
                     child: Stack(
@@ -151,7 +151,7 @@ class Perfil extends StatelessWidget {
                   ),
                   Container(
                     // autogroup8ufwKYZ (DBsYAwvuwU53erkgiK8UFw)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 12*fem),
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 1*fem),//x,x,x,12
                     width: 301*fem,
                     height: 45*fem,
                     child: Stack(
@@ -200,7 +200,7 @@ class Perfil extends StatelessWidget {
                   ),
                   Container(
                     // autogroupfa45b2D (DBsYLMpu1KbBhWa42oFa45)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 19*fem),
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 14*fem),//x,x,x,19
                     width: 301*fem,
                     height: 45*fem,
                     child: Stack(
