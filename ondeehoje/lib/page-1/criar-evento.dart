@@ -137,7 +137,7 @@ class _NewEvent extends State<NewEvent> {
               Container(
                 // autogroupev9ocLu (DBsVZ2J4LTuuRpZaqrEV9o)
                 margin: EdgeInsets.fromLTRB(17*fem, 0*fem, 169*fem, 24*fem),
-                padding: EdgeInsets.fromLTRB(11.13*fem, 6.13*fem, 7*fem, 6.13*fem),
+                padding: EdgeInsets.fromLTRB(11.13*fem, 6.13*fem, 0*fem, 6.13*fem),
                 width: double.infinity,
                 decoration: BoxDecoration (
                   border: Border.all(color: Color(0xff161a32)),
@@ -156,7 +156,7 @@ class _NewEvent extends State<NewEvent> {
                   children: [
                     Container(
                       // materialsymbolsaddphotoalterna (0:352)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.13*fem, 0*fem),
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
                       width: 18.75*fem,
                       height: 18.75*fem,
                       child: Image.asset(
@@ -167,18 +167,23 @@ class _NewEvent extends State<NewEvent> {
                     ),
                     Container(
                       // escolherimagemwvu (0:330)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                      child: Text(
-                        'Escolher imagem',
-                        style: SafeGoogleFont (
-                          'Inter',
-                          fontSize: 13*ffem,
-                          fontWeight: FontWeight.w300,
-                          height: 1.2125*ffem/fem,
-                          fontStyle: FontStyle.italic,
-                          color: Color(0xff161a32),
+                      child: TextButton(
+                        onPressed: () {
+                          // ação a ser executada ao pressionar o botão
+                        },
+                        child: Text(
+                          'Escolher imagem',
+                          style: SafeGoogleFont(
+                            'Inter',
+                            fontSize: 13 * ffem,
+                            fontWeight: FontWeight.w300,
+                            height: 1.2125 * ffem / fem,
+                            fontStyle: FontStyle.italic,
+                            color: Color(0xff161a32),
+                          ),
                         ),
                       ),
+
                     ),
                   ],
                 ),
@@ -308,28 +313,6 @@ class _NewEvent extends State<NewEvent> {
                 child: Stack(
                   children: [
                     Positioned(
-                      // local3pq (0:323)
-                      left: 12*fem,
-                      top: 11*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 61*fem,
-                          height: 25*fem,
-                          child: Text(
-                            'Local: ',
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 20*ffem,
-                              fontWeight: FontWeight.w300,
-                              height: 1.2125*ffem/fem,
-                              fontStyle: FontStyle.italic,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
                       // rectangle33UfF (0:332)
                       left: 0*fem,
                       top: 0*fem,
@@ -341,6 +324,33 @@ class _NewEvent extends State<NewEvent> {
                             decoration: BoxDecoration (
                               borderRadius: BorderRadius.circular(8*fem),
                               border: Border.all(color: Color(0xffffffff)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      // nomedoeventoq97 (0:321)
+                      left: 12*fem,
+                      top: 5*fem,
+                      child: Align(
+                        child: SizedBox(
+                          width: 274*fem,
+                          height: 25*fem,
+                          child: TextFormField(
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              hintText: 'Local',
+                              hintStyle: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 20*ffem,
+                                fontWeight: FontWeight.w300,
+                                height: 1.2125*ffem/fem,
+                                fontStyle: FontStyle.italic,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),
@@ -496,6 +506,38 @@ class _NewEvent extends State<NewEvent> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Scaffold(body: Perfil())),
+                  );
+                },
+                child: Container(
+                  // autogroupzvvbVtZ (DBsfYeov7qDRNqmYDLZvVB)
+                  margin: EdgeInsets.fromLTRB(80*fem, 20*fem, 78*fem, 13*fem),
+                  width: double.infinity,
+                  height: 45*fem,
+                  decoration: BoxDecoration (
+                    color: Color(0x3f000000),
+                    borderRadius: BorderRadius.circular(8*fem),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'CRIAR EVENTO',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont (
+                        'SF UI Display',
+                        fontSize: 17*ffem,
+                        fontWeight: FontWeight.w600,
+                        height: 1.2575*ffem/fem,
+                        color: Color(0xffffffff),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
