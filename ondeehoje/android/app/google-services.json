@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330087233678",
+    "project_id": "onde-hoje-9de66",
+    "storage_bucket": "onde-hoje-9de66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330087233678:android:5472262879f3e73495b1df",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330087233678-jsi1v4srp9a9es66i63c3e7e0ndv47ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzHjIyzlq4gAzAAnDHnJUh2rEnpC0Z8DY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330087233678-jsi1v4srp9a9es66i63c3e7e0ndv47ur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
