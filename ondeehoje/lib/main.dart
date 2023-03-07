@@ -16,10 +16,10 @@ import 'package:myapp/utils.dart';
 // import 'package:myapp/page-1/onboarding-1.dart';
 
 void main()async{
-WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
-runApp(MyApp());
+  runApp(MyApp());
 
 } 
 class MyApp extends StatelessWidget {
