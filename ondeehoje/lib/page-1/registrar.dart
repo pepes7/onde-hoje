@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -5,7 +6,37 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/logar.dart';
 import 'package:myapp/utils.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget{
+
+
+  @override
+  _Register createState() => _Register();
+
+}
+
+class _Register extends State<Register> {
+  // text controller
+  final _nomeController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _senhaController = TextEditingController();
+
+  @override
+  void dispose(){
+    _nomeController.dispose();
+    _emailController.dispose();
+    _senhaController.dispose();
+    super.dispose();
+  }
+
+  Future singUp() async{
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(), 
+      password: _senhaController.text.trim(),
+      );
+
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -281,6 +312,7 @@ class Register extends StatelessWidget {
                           width: 264*fem,
                           height: 32.5*fem,
                           child: TextFormField(
+                            controller: _emailController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -306,6 +338,7 @@ class Register extends StatelessWidget {
                           width: 264 * fem,
                           height: 33 * fem,
                           child: TextFormField(
+                            controller: _nomeController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -332,6 +365,8 @@ class Register extends StatelessWidget {
                           width: 264*fem,
                           height: 28*fem,
                           child: TextFormField(
+                            controller: _senhaController,
+                            obscureText: true,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -345,6 +380,13 @@ class Register extends StatelessWidget {
                                 color: Color(0xffc8c7cc),
                               ),
                             ),
+                            validator: (value){
+                              if (value!.isEmpty){
+                                return 'Informe sua senha!';
+                              }else if (value.length < 6){
+                                return 'Sua senha deve ter no mínimo 6 caracteres';
+                              }
+                            },
                           ),
                         ),
                       ),
@@ -355,6 +397,7 @@ class Register extends StatelessWidget {
                       top: 596*fem,
                       child: TextButton(
                         onPressed: () {
+                          singUp();
                           Navigator.push(
                             context,
                             MaterialPageRoute(

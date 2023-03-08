@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -6,7 +7,37 @@ import 'package:myapp/page-1/perfil.dart';
 import 'package:myapp/page-1/registrar.dart';
 import 'package:myapp/utils.dart';
 
-class Login extends StatelessWidget {
+
+class Login extends StatefulWidget{
+
+
+@override
+_Login createState() => _Login();
+
+}
+  
+class _Login extends State<Login> {
+// text controller
+final _emailController = TextEditingController();
+final _senhaController = TextEditingController();
+bool isLogin = false;
+  @override
+  void dispose(){
+    _emailController.dispose();
+    _senhaController.dispose();
+    super.dispose();
+  }
+  
+  Future singIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(), 
+      password: _senhaController.text.trim(),
+      );
+      isLogin = true;
+
+  }
+  
+  
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -265,6 +296,7 @@ class Login extends StatelessWidget {
                           width: 161*fem,
                           height: 24*fem,
                           child: TextFormField(
+                            controller: _emailController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -291,6 +323,8 @@ class Login extends StatelessWidget {
                           width: 264*fem,
                           height: 28*fem,
                           child: TextFormField(
+                            controller: _senhaController,
+                            obscureText: true,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -314,11 +348,14 @@ class Login extends StatelessWidget {
                       top: 567*fem,
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          singIn();
+                          if(isLogin){
+                            Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => Scaffold(body: Perfil())),
                           );
+                          }
                         },
                         style: TextButton.styleFrom (
                           padding: EdgeInsets.zero,

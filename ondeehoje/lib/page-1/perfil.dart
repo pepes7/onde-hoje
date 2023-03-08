@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -5,7 +6,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/criar-evento.dart';
 import 'package:myapp/utils.dart';
 
-class Perfil extends StatelessWidget {
+
+class Perfil extends StatefulWidget{
+  const Perfil({Key ? key}) : super(key: key);
+
+  @override
+  State<Perfil> createState() => _Perfil();
+
+
+
+} 
+class _Perfil extends State<Perfil>{
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -214,7 +226,7 @@ class Perfil extends StatelessWidget {
                               width: 280*fem,
                               height: 25*fem,
                               child: Text(
-                                'E-mail: csdaraujo@uea.edu.br',
+                                'E-mail: '+user.email!,
                                 style: SafeGoogleFont (
                                   'Inter',
                                   fontSize: 20*ffem,
